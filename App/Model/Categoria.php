@@ -58,6 +58,16 @@ class Categoria{
         }
     }
 
+    public function atualizar(){
+        $sql = " UPDATE tbl_categoria SET descricao = ? WHERE id = ? ";
+
+        $stmt = Model::getConexao()->prepare($sql);
+        $stmt->bindValue(1, $this->descricao);
+        $stmt->bindValue(2, $this->id);
+        
+        return $stmt->execute();
+    }
+
     public function deletar(){
 
         $sql = " DELETE FROM tbl_categoria WHERE id = ? ";

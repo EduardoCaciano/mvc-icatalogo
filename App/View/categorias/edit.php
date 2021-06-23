@@ -1,5 +1,5 @@
 <div class="categorias-container">
-    <form class="form-categorias" method="POST" action="/categorias/update">
+    <form class="form-categorias" method="POST" action="/categorias/update/<?= $dados->id?>">
         <ul>
             <?php
             //verifica se existe erros na sessão do usuário
